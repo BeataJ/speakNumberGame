@@ -38,6 +38,14 @@ p {
   margin-top: 40px;
 }
 
+.box {
+  border: 1px solid #dedede;
+  display: inline-block;
+  font-size: 30px;
+  margin: 20px;
+  padding: 10px;
+}
+
 @media(max-width: 600px) {
   body {
     font-size: 13px;
