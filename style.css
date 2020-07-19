@@ -33,6 +33,11 @@ p {
   margin-top: 10px;
 }
 
+.msg {
+  font-size: 1.5em;
+  margin-top: 40px;
+}
+
 @media(max-width: 600px) {
   body {
     font-size: 13px;
