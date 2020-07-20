@@ -9,7 +9,8 @@ window.SpeechRecognition =
 
 let recognition = new window.SpeechRecognition();
 
-//
+//Start recognition and game
+recognition.start();
 
 function getRandomNuber() {
   return Math.floor(Math.random() * 100) + 1;
