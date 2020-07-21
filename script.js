@@ -17,7 +17,7 @@ function onSpeak(e) {
   const msg = e.results[0][0].transcript;
 
   writeMessage(msg);
-  // checkNumber(msg);
+  checkNumber(msg);
 }
 
 function writeMessage(msg) {
@@ -25,6 +25,23 @@ function writeMessage(msg) {
     <div>You said: </div>
     <span class="box">${msg}</span>
   `;
+}
+
+// check if valid number
+function checkNumber(msg) {
+  const num = +msg;
+
+  // check if valid number
+  if (Number.isNaN(num)) {
+    msgEl.innerHTML = '<div>That is not a number</div>';
+    return;
+  }
+
+  // check if is valid
+  if (num > 100 || num < 1) {
+    msgEl.innerHtml += '<div>Number must be between 1 and 100</div>';
+    return;
+  }
 }
 
 // generate random number
