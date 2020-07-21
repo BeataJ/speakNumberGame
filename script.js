@@ -31,24 +31,24 @@ function writeMessage(msg) {
 function checkNumber(msg) {
   const num = +msg;
 
-  // check if valid number
+  // Check if valid number
   if (Number.isNaN(num)) {
-    msgEl.innerHTML = '<div>That is not a number</div>';
+    msgEl.innerHTML += '<div>That is not a valid number</div>';
     return;
   }
 
-  // check if is valid
+  // Check in range
   if (num > 100 || num < 1) {
-    msgEl.innerHtml += '<div>Number must be between 1 and 100</div>';
+    msgEl.innerHTML += '<div>Number must be between 1 and 100</div>';
     return;
   }
 
-  // check number
+  // Check number
   if (num === randomNum) {
     document.body.innerHTML = `
-      <h2>Congrads! You have guessed the number! <br><br>
+      <h2>Congrats! You have guessed the number! <br><br>
       It was ${num}</h2>
-      <button class="play-again" id="play-again">Play Again</botton>
+      <button class="play-again" id="play-again">Play Again</button>
     `;
   } else if (num > randomNum) {
     msgEl.innerHTML += '<div>GO LOWER</div>';
@@ -67,3 +67,9 @@ recognition.addEventListener('result', onSpeak);
 
 // End SR service
 recognition.addEventListener('end', () => recognition.start());
+
+document.body.addEventListener('click', (e) => {
+  if (e.target.id == 'play-again') {
+    window.location.reload();
+  }
+});
